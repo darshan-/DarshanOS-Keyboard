@@ -189,11 +189,12 @@ public final class ResourceUtils {
 
     public static int getKeyboardHeight(final Resources res, final SettingsValues settingsValues) {
         final int defaultKeyboardHeight = getDefaultKeyboardHeight(res);
-        if (settingsValues.mHasKeyboardResize) {
-            // mKeyboardHeightScale Ranges from [.5,1.2], from xml/prefs_screen_debug.xml
-            return (int)(defaultKeyboardHeight * settingsValues.mKeyboardHeightScale);
-        }
-        return defaultKeyboardHeight;
+        return (int)(defaultKeyboardHeight * 1.25);
+        // if (settingsValues.mHasKeyboardResize) {
+        //     // mKeyboardHeightScale Ranges from [.5,1.2], from xml/prefs_screen_debug.xml
+        //     return (int)(defaultKeyboardHeight * settingsValues.mKeyboardHeightScale);
+        // }
+        // return defaultKeyboardHeight;
     }
 
     public static int getDefaultKeyboardHeight(final Resources res) {

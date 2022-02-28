@@ -120,7 +120,8 @@ public final class KeyPreviewDrawParams {
     }
 
     public boolean isPopupEnabled() {
-        return mShowPopup;
+        //return mShowPopup;
+        return false;
     }
 
     public int getLingerTimeout() {
