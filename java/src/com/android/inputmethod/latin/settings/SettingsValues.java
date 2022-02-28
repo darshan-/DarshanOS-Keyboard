@@ -147,7 +147,7 @@ public class SettingsValues {
                 ? Settings.readShowsLanguageSwitchKey(prefs) : true /* forcibly */;
         mUseContactsDict = prefs.getBoolean(Settings.PREF_KEY_USE_CONTACTS_DICT, true);
         mUsePersonalizedDicts = prefs.getBoolean(Settings.PREF_KEY_USE_PERSONALIZED_DICTS, false);
-        mUseDoubleSpacePeriod = prefs.getBoolean(Settings.PREF_KEY_USE_DOUBLE_SPACE_PERIOD, true)
+        mUseDoubleSpacePeriod = prefs.getBoolean(Settings.PREF_KEY_USE_DOUBLE_SPACE_PERIOD, false)
                 && inputAttributes.mIsGeneralTextInput;
         mBlockPotentiallyOffensive = Settings.readBlockPotentiallyOffensive(prefs, res);
         mAutoCorrectEnabled = Settings.readAutoCorrectEnabled(prefs, res);
@@ -317,8 +317,9 @@ public class SettingsValues {
 
     private static boolean readBigramPredictionEnabled(final SharedPreferences prefs,
             final Resources res) {
-        return prefs.getBoolean(Settings.PREF_BIGRAM_PREDICTIONS, res.getBoolean(
-                R.bool.config_default_next_word_prediction));
+        //return prefs.getBoolean(Settings.PREF_BIGRAM_PREDICTIONS, res.getBoolean(
+        //        R.bool.config_default_next_word_prediction));
+        return prefs.getBoolean(Settings.PREF_BIGRAM_PREDICTIONS, false);
     }
 
     private static float readAutoCorrectionThreshold(final Resources res,

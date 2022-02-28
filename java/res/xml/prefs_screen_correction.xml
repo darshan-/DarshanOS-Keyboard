@@ -45,7 +45,7 @@
         android:key="pref_key_auto_correction"
         android:title="@string/auto_correction"
         android:summary="@string/auto_correction_summary"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:persistent="true" />
     <CheckBoxPreference
         android:key="show_suggestions"
@@ -68,6 +68,6 @@
         android:key="next_word_prediction"
         android:title="@string/bigram_prediction"
         android:summary="@string/bigram_prediction_summary"
-        android:defaultValue="true"
+        android:defaultValue="false"
         android:persistent="true" />
 </PreferenceScreen>

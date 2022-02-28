@@ -216,7 +216,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
 
     public static boolean readAutoCorrectEnabled(final SharedPreferences prefs,
             final Resources res) {
-        return prefs.getBoolean(PREF_AUTO_CORRECTION, true);
+        return prefs.getBoolean(PREF_AUTO_CORRECTION, false);
     }
 
     public static float readPlausibilityThreshold(final Resources res) {
@@ -355,14 +355,14 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
 
     public static boolean readShowSetupWizardIcon(final SharedPreferences prefs,
             final Context context) {
-        if (!prefs.contains(PREF_SHOW_SETUP_WIZARD_ICON)) {
-            final ApplicationInfo appInfo = context.getApplicationInfo();
-            final boolean isApplicationInSystemImage =
-                    (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
-            // Default value
-            return !isApplicationInSystemImage;
-        }
-        return prefs.getBoolean(PREF_SHOW_SETUP_WIZARD_ICON, false);
+        // if (!prefs.contains(PREF_SHOW_SETUP_WIZARD_ICON)) {
+        //     final ApplicationInfo appInfo = context.getApplicationInfo();
+        //     final boolean isApplicationInSystemImage =
+        //             (appInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
+        //     // Default value
+        //     return !isApplicationInSystemImage;
+        // }
+        return prefs.getBoolean(PREF_SHOW_SETUP_WIZARD_ICON, true);
     }
 
     public static boolean readHasHardwareKeyboard(final Configuration conf) {
